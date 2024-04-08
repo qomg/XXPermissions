@@ -15,9 +15,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.view.Display;
 import android.view.Surface;
@@ -273,7 +273,7 @@ final class PermissionUtils {
             } else if (context instanceof ContextWrapper) {
                 // android.content.ContextWrapper
                 // android.content.MutableContextWrapper
-                // android.support.v7.view.ContextThemeWrapper
+                // androidx.appcompat.view.ContextThemeWrapper
                 context = ((ContextWrapper) context).getBaseContext();
             } else {
                 return null;

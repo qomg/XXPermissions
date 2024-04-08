@@ -5,8 +5,8 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        versionCode 1862
-        versionName "18.62"
+        versionCode 1870
+        versionName "18.70"
     }
 
     // 使用 JDK 1.8
@@ -19,12 +19,12 @@ android {
         abortOnError false
     }
 
-    android.libraryVariants.configureEach { variant ->
-        // aar 输出文件名配置
-        variant.outputs.configureEach { output ->
-            outputFileName = "${rootProject.name}-${android.defaultConfig.versionName}.aar"
-        }
-    }
+//    libraryVariants.configureEach { variant ->
+//        // aar 输出文件名配置
+//        variant.outputs.configureEach { output ->
+//            outputFileName = "${rootProject.name}-${android.defaultConfig.versionName}.aar"
+//        }
+//    }
 
     packagingOptions {
         // 剔除这个包下的所有文件（不会移除签名信息）
@@ -32,17 +32,17 @@ android {
     }
 }
 
-afterEvaluate {
-    // 排除 BuildConfig.class 和 R.class
-    generateReleaseBuildConfig.enabled = false
-    generateDebugBuildConfig.enabled = false
-    generateReleaseResValues.enabled = false
-    generateDebugResValues.enabled = false
-}
+//afterEvaluate {
+//    // 排除 BuildConfig.class 和 R.class
+//    generateReleaseBuildConfig.enabled = false
+//    generateDebugBuildConfig.enabled = false
+//    generateReleaseResValues.enabled = false
+//    generateDebugResValues.enabled = false
+//}
 
 dependencies {
-    // noinspection GradleCompatible
-    compileOnly 'com.android.support:support-fragment:24.2.0'
+    implementation('androidx.annotation:annotation:1.3.0')
+    implementation('androidx.fragment:fragment:1.3.6')
 }
 
 tasks.withType(Javadoc).configureEach {
